@@ -4,5 +4,11 @@
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/02_/thuc_hanh/02_if_va_loop/typescript-demo" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/02_/thuc_hanh/typescript-demo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/02_typescript/bai_tap/01_search_github" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/02_typescript/thuc_hanh/01_bien_va_kieu_du_lieu" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/02_typescript/thuc_hanh/02_if_va_loop/typescript-demo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/02_typescript/thuc_hanh/03_mang/typescript-demo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/02_typescript/thuc_hanh/06_promise/typescript-demo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/angular-training" vcs="Git" />
   </component>
 </project>
