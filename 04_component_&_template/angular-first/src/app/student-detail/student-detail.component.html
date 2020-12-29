@@ -1,0 +1,13 @@
+<div *ngIf="student">
+  <h3>Student Detail</h3>
+  <p>ID sinh vien: {{student.id}}</p>
+  <p>Ten sinh vien: {{student.name}}</p>
+  <p>Diem sinh vien: {{student.mark}}</p>
+  <p>Hinh anh sinh vien:<img [src]="student.image"></p>
+  <label>Cham diem: </label>
+  <!--<input type="number" [(ngModel)]="student.mark">-->
+  <input type="number" (change)="getMark($event.target.value)">
+  <p>ten {{student.name}}</p>
+  <button (click)="updateName()">Update Name</button>
+</div>
+
