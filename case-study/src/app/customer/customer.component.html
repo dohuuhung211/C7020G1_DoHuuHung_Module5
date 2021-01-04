@@ -1,0 +1,33 @@
+<button [routerLink]="['create']">Create</button>
+<table border="1" cellpadding="2">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Date Of Birth</th>
+    <th>ID Card</th>
+    <th>Phone</th>
+    <th>Email</th>
+    <th>Address</th>
+    <th>Customer Type</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let customer of customers">
+    <td>{{customer.id}}</td>
+    <td>
+      <a [routerLink]="['detail', customer.id]">{{customer.name}}</a>
+    </td>
+    <td>{{customer.dateOfBirth}}</td>
+    <td>{{customer.idCard}}</td>
+    <td>{{customer.phone}}</td>
+    <td>{{customer.email}}</td>
+    <td>{{customer.address}}</td>
+    <td>{{customer.idCustomerType.name}}</td>
+    <td>
+      <button [routerLink]="['edit', customer.id]">Edit</button>
+    </td>
+  </tr>
+  </tbody>
+</table>

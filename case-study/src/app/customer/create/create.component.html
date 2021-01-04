@@ -1,0 +1,55 @@
+<form [formGroup]="customerForm" (ngSubmit)="saveCustomer()" class="form-group">
+  <div class="form-group">
+    <label>ID: </label>
+    <input
+      formControlName="id"
+      type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Name: </label>
+    <input
+      formControlName="name"
+      type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Date Of Birth: </label>
+    <input
+      formControlName="dateOfBirth"
+      type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>ID Card: </label>
+    <input
+      formControlName="idCard"
+      type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Phone: </label>
+    <input
+      formControlName="phone"
+      type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Email: </label>
+    <input
+      formControlName="email"
+      type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Address: </label>
+    <input
+      formControlName="address"
+      type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Customer Type: </label>
+    <select formControlName="idCustomerType">
+      <option value="1">Diamond</option>
+      <option value="2">Platinum</option>
+      <option value="3">Gold</option>
+      <option value="4">Silver</option>
+      <option value="5">Member</option>
+    </select>
+  </div>
+  <input type="submit" value="Create" class="btn btn-success">
+</form>

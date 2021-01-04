@@ -1,4 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
+import { Subscription } from 'rxjs';
+import {ActivatedRoute, ParamMap} from "@angular/router";
+import {StudentServiceService} from "../student-service.service";
 export interface IStudent {
   id: number;
   name: string;
@@ -11,11 +14,18 @@ export interface IStudent {
   styleUrls: ['./student-detail.component.scss']
 })
 export class StudentDetailComponent implements OnInit {
-  @Input()
   student: IStudent;
-  constructor() { }
+  sub: Subscription;
+  constructor(private activatedRoute: ActivatedRoute,
+              private studentService: StudentServiceService) { }
 
   ngOnInit(): void {
+    this.sub = this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
+      const id = paramMap.get('id');
+      console.log(id);
+      this.student = this.studentService.findById(parseInt(id));
+      console.log(this.student.name);
+    });
   }
 
   getMark(value: any) {

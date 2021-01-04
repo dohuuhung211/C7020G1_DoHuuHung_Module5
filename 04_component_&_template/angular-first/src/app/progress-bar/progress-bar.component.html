@@ -1,0 +1,11 @@
+<h2>Progress Bar</h2>
+<div class="progress-bar-container" [style.backgroundColor]="backgroundColor">
+  <p>{{width}}</p>
+  <div class="progress" [ngStyle]="{
+  backgroundColor: progressColor,
+  width: width + '%'
+  }"></div>
+
+</div>
+<button (click)="increment()">Increment</button>
+<button (click)="decrement()">Increment</button>

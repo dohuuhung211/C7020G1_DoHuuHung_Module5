@@ -8,6 +8,8 @@
   <!--<input type="number" [(ngModel)]="student.mark">-->
   <input type="number" (change)="getMark($event.target.value)">
   <p>ten {{student.name}}</p>
-  <button (click)="updateName()">Update Name</button>
+  <button class="btn btn-success" (click)="updateName()">Update Name</button>
+
+  <button routerLink="" class="btn-primary">Back</button>
 </div>
 

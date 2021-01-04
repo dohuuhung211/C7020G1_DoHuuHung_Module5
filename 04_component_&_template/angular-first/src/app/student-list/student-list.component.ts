@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IStudent } from '../student-detail/student-detail.component';
+import {StudentDAOComponent} from "../student-dao/student-dao.component";
+import {StudentServiceService} from "../student-service.service";
 
 
 @Component({
@@ -8,32 +10,16 @@ import { IStudent } from '../student-detail/student-detail.component';
   styleUrls: ['./student-list.component.scss']
 })
 export class StudentListComponent implements OnInit {
-  students: IStudent[] = [
-    {
-      id: 1,
-      name: 'Do Huu Hung',
-      mark: 0,
-      image: 'https://dyl80ryjxr1ke.cloudfront.net/external_assets/hero_examples/hair_beach_v1785392215/result.jpeg'
-    },
-    {
-      id: 2,
-      name: 'Hieu',
-      mark: 0,
-      image: 'https://dyl80ryjxr1ke.cloudfront.net/external_assets/hero_examples/hair_beach_v1785392215/result.jpeg'
-    },
-    {
-      id: 3,
-      name: 'Cuong',
-      mark: 0,
-      image: 'https://dyl80ryjxr1ke.cloudfront.net/external_assets/hero_examples/hair_beach_v1785392215/result.jpeg'
-    }
-  ];
-  constructor() { }
+  
+  registerForm = false;
+  students: IStudent[];
+  constructor(private studentServiceService: StudentServiceService) { }
 
   ngOnInit(): void {
+    this.students = this.studentServiceService.findAll()
   }
-  studentDetail: IStudent;
-  getStudent(student: IStudent) {
-    this.studentDetail = student;
+
+  showRegisterForm() {
+    this.registerForm = !this.registerForm;
   }
 }
