@@ -6,7 +6,10 @@ import { AppComponent } from './app.component';
 import { CustomerComponent } from './customer/customer.component';
 import { DetailComponent } from './customer/detail/detail.component';
 import { CreateComponent } from './customer/create/create.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import {Ng2SearchPipeModule} from 'ng2-search-filter';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +22,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

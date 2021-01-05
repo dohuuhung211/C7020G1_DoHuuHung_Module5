@@ -8,5 +8,5 @@ export interface ICustomer {
   phone: string;
   email: string;
   address: string;
-  idCustomerType: ICustomerType;
+  idCustomerType: string;
 }

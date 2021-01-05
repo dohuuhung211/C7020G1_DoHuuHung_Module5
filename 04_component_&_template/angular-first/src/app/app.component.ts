@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import {AuthService} from './auth.service';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +7,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent{
+  constructor(public authService: AuthService) {}
   title = 'angular-first';
   countdownMsg = '';
   countdownAliasMsg = '';

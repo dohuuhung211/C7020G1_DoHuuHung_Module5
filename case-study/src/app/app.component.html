@@ -1,2 +1,49 @@
-<a routerLink="/customer">Customer</a>
-<router-outlet></router-outlet>
+
+<div class="container-fluid px-0" style="height: 100vh">
+  <nav class="navbar navbar-expand-sm navbar-light" style="height: 8%" style="background-color: bisque">
+    <!-- Brand -->
+    <a class="navbar-brand" href="#">
+      <img src="../assets/image/kisspng-four-seasons-hotels-and-resorts-four-seasons-hotel-5af85e1b18d3d0.4943647415262264591017.png"
+      width="100px" height="50px"/>
+    </a>
+
+    <!-- Links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+
+      <!-- Dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          Category
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Link 1</a>
+          <a class="dropdown-item" href="#">Link 2</a>
+          <a class="dropdown-item" href="#">Link 3</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+  <div class="row px-0 mx-0" style="height: 92%">
+    <div class="col-2 px-0 mx-0 rounded" style="height: 100%; border: 1px solid #E8E9EA">
+      <div class="list-group">
+        <a routerLink="/home" class="list-group-item list-group-item-action bg-dark" style="background-color: bisque; color: white">
+          Home
+        </a>
+        <a routerLink="/customer" class="list-group-item list-group-item-action">Customer</a>
+        <a href="#" class="list-group-item list-group-item-action">Employee</a>
+        <a href="#" class="list-group-item list-group-item-action">Contact</a>
+        <a href="#" class="list-group-item list-group-item-action">Contact Detail</a>
+        <a href="#" class="list-group-item list-group-item-action">Booking</a>
+      </div>
+    </div>
+    <div class="col-10 p-5 mx-0" style="height: 100%">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

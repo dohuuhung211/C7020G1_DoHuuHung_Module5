@@ -3,6 +3,7 @@ import {FormControl, FormGroup} from '@angular/forms';
 import {Route, Router} from '@angular/router';
 import {CustomerService} from '../../service/customer.service';
 import {CustomerTypeService} from '../../service/customer-type.service';
+import {ICustomerType} from '../../model/ICustomerType';
 
 @Component({
   selector: 'app-create',
@@ -11,9 +12,14 @@ import {CustomerTypeService} from '../../service/customer-type.service';
 })
 export class CreateComponent implements OnInit {
   customerForm: FormGroup;
+  customerTypeList: ICustomerType[];
   constructor(private router: Router,
               private customerService: CustomerService,
-              private customerTypeService: CustomerTypeService) { }
+              private customerTypeService: CustomerTypeService) {
+    this.customerTypeService.findAll().toPromise().then(data => {
+      this.customerTypeList = data;
+    });
+  }
   ngOnInit(): void {
     this.customerForm = new FormGroup({
       id: new FormControl(''),
@@ -26,15 +32,20 @@ export class CreateComponent implements OnInit {
       idCustomerType: new FormControl('')
     });
   }
-  saveCustomer(){
-    for (const e of this.customerTypeService.findAll()){
-      // tslint:disable-next-line:triple-equals
-      if (e.id == this.customerForm.value.idCustomerType){
-        this.customerForm.value.idCustomerType = e;
-      }
-    }
-    console.log(this.customerForm.value);
-    this.customerService.saveCustomer(this.customerForm.value);
-    this.router.navigateByUrl('customer');
+  saveCustomer() {
+    this.customerService.saveCustomer(this.customerForm.value).subscribe(data => {
+      this.router.navigateByUrl('customer').then(r => alert('Added successfully!'));
+    });
   }
+  // saveCustomer(){
+  //   for (const e of this.customerTypeService.findAll()){
+  //     // tslint:disable-next-line:triple-equals
+  //     if (e.id == this.customerForm.value.idCustomerType){
+  //       this.customerForm.value.idCustomerType = e;
+  //     }
+  //   }
+  //   console.log(this.customerForm.value);
+  //   this.customerService.saveCustomer(this.customerForm.value);
+  //   this.router.navigateByUrl('customer');
+  // }
 }

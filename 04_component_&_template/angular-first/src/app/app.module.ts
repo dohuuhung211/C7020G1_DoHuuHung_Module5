@@ -19,6 +19,8 @@ import { RatingBarComponent } from './rating-bar/rating-bar.component';
 import { StudentFormComponent } from './student-form/student-form.component';
 import { StudentModelDrivenFormComponent } from './student-model-driven-form/student-model-driven-form.component';
 import { StudentDAOComponent } from './student-dao/student-dao.component';
+import {ImageGalleryModule} from './image-gallery/image-gallery.module';
+import {ContentProjectionModule} from './content-projection/content-projection.module';
 
 
 @NgModule({
@@ -41,12 +43,14 @@ import { StudentDAOComponent } from './student-dao/student-dao.component';
     StudentListComponent,
     StudentDAOComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        FormsModule,
-        ReactiveFormsModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ImageGalleryModule,
+    ContentProjectionModule
+  ],
   providers: [
 
   ],
