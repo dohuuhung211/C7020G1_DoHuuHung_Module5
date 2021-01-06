@@ -1,154 +1,34 @@
 {
   "customers": [
     {
-      "id": 1,
-      "name": "Hung",
-      "dateOfBirth": "2019-11-11",
-      "idCard": "Quảng nam",
-      "phone": "8",
-      "email": "chauquy@gmail.com",
-      "address": "Đà nẵng",
-      "idCustomerType": "Diamond"
-    },
-    {
       "id": 2,
-      "name": "Hau",
-      "dateOfBirth": "2020-12-12",
-      "idCard": "Quảng nam",
-      "phone": "8",
-      "email": "nguyenhoangtu24061999@gmail.com",
-      "address": "Quảng nam",
-      "idCustomerType": "Diamond"
-    },
-    {
-      "id": 3,
-      "name": "Hoang",
-      "dateOfBirth": "2021-01-03",
-      "idCard": "13",
-      "phone": "12",
-      "email": "nguyenhoangtu24061999@gmail.com",
-      "address": "Quảng nam",
+      "name": "Trang",
+      "dateOfBirth": "2021-01-05",
+      "idCard": "201666858",
+      "phone": "51616546521621",
+      "email": "trang@gmail.com",
+      "address": "Nghe An",
       "idCustomerType": "Diamond"
     },
     {
       "id": 4,
-      "name": "Hoang tu 1",
-      "dateOfBirth": "2021-01-02",
-      "idCard": "13",
-      "phone": "12",
-      "email": "nguyenhoangtu24061999@gmail.com",
-      "address": "Quảng nam",
+      "name": "hung",
+      "dateOfBirth": "2021-01-05",
+      "idCard": "1",
+      "phone": "1",
+      "email": "1",
+      "address": "1",
       "idCustomerType": "Gold"
     },
     {
       "id": 5,
-      "name": "Hoang tu 232",
-      "dateOfBirth": "2021-01-09",
-      "idCard": "13",
-      "phone": "12",
-      "email": "nguyenhoangtu24061999@gmail.com",
-      "address": "Quảng nam",
-      "idCustomerType": "Gold"
-    },
-    {
-      "id": 6,
-      "name": "Hoang tu 123",
-      "dateOfBirth": "2021-01-10",
-      "idCard": "13",
-      "phone": "12",
-      "email": "nguyenhoangtu24061999@gmail.com",
-      "address": "Quảng nam",
+      "name": "KI",
+      "dateOfBirth": "2020-12-29",
+      "idCard": "321321321321",
+      "phone": "648642418564",
+      "email": "HUNG@MGAIL",
+      "address": "DA NANG",
       "idCustomerType": "Diamond"
-    },
-    {
-      "id": 7,
-      "name": "alo",
-      "dateOfBirth": "2021-01-13",
-      "idCard": "13",
-      "phone": "12",
-      "email": "nguyenhoangtu24061999@gmail.com",
-      "address": "Quảng nam",
-      "idCustomerType": "Gold"
-    },
-    {
-      "id": 8,
-      "name": "tu 1",
-      "dateOfBirth": "2021-01-02",
-      "idCard": "13",
-      "phone": "12",
-      "email": "nguyenhoangtu24061999@gmail.com",
-      "address": "Quảng nam",
-      "idCustomerType": "Gold"
-    },
-    {
-      "id": 9,
-      "name": "ki",
-      "dateOfBirth": "2021-01-03",
-      "idCard": "13",
-      "phone": "12",
-      "email": "nguyenchauquy111201@gmail.com",
-      "address": "Quảng nam",
-      "idCustomerType": "Diamond"
-    },
-    {
-      "id": 10,
-      "name": "Hoàng Tứ",
-      "dateOfBirth": "2021-01-02",
-      "idCard": "13",
-      "phone": "12",
-      "email": "nguyenhoangtu24061999@gmail.com",
-      "address": "Quảng nam",
-      "idCustomerType": "Diamond"
-    },
-    {
-      "id": 11,
-      "name": "hhhhhhhhhhhhh",
-      "dateOfBirth": "",
-      "idCard": "",
-      "phone": "",
-      "email": "",
-      "address": "",
-      "idCustomerType": "Gold"
-    },
-    {
-      "id": 12,
-      "name": "hhhhhhhhjjjjjjjjjjjjjjjjj",
-      "dateOfBirth": "",
-      "idCard": "",
-      "phone": "",
-      "email": "",
-      "address": "",
-      "idCustomerType": "Gold"
-    },
-    {
-      "id": 13,
-      "name": "llllllllllllllll",
-      "dateOfBirth": "",
-      "idCard": "",
-      "phone": "",
-      "email": "",
-      "address": "",
-      "idCustomerType": "Platinum"
-    },
-    {
-      "id": 14,
-      "name": "hung vupo",
-      "dateOfBirth": "22/11/1995",
-      "idCard": "201666858",
-      "phone": "0905194345",
-      "email": "hung@gmail.com",
-      "address": "Da nang",
-      "idCustomerType": "Member"
-    },
-    {
-      "id": 15,
-      "name": "jsdf",
-      "dateOfBirth": "",
-      "idCard": "",
-      "phone": "",
-      "email": "",
-      "address": "",
-      "idCustomerType": "Silver"
     }
   ],
   "customerType": [

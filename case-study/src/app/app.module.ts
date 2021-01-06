@@ -9,6 +9,10 @@ import { CreateComponent } from './customer/create/create.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { DeleteComponent } from './customer/delete/delete.component';
+import {ToastrModule} from 'ngx-toastr';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -16,7 +20,8 @@ import {Ng2SearchPipeModule} from 'ng2-search-filter';
     AppComponent,
     CustomerComponent,
     DetailComponent,
-    CreateComponent
+    CreateComponent,
+    DeleteComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +29,10 @@ import {Ng2SearchPipeModule} from 'ng2-search-filter';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    NgxPaginationModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

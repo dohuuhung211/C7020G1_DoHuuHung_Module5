@@ -47,6 +47,14 @@ export class CustomerService {
   //   this.customerList.unshift(customer);
   // }
   saveCustomer(customer): Observable<ICustomer> {
-    return this.http.post<ICustomer>(this.baseURL, JSON.stringify(customer), this.httpOptions)
+    return this.http.post<ICustomer>(this.baseURL, JSON.stringify(customer), this.httpOptions);
+  }
+
+  searchByName(name: string): Observable<ICustomer[]> {
+    // return this.http.get<ICustomer[]>(this.baseURL + '?name_like=' + name);
+    return this.http.get<ICustomer[]>(this.baseURL + '?q=' + name);
+  }
+  deleteCustomer(id: number): Observable<any>{
+    return this.http.delete(this.baseURL + '/' + id);
   }
 }

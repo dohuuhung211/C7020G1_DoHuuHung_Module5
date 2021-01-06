@@ -1,16 +1,20 @@
-<form [formGroup]="customerForm" (ngSubmit)="saveCustomer()">
+<h2 class="text-center">Create Customer</h2>
+<form [formGroup]="customerForm" (ngSubmit)="saveCustomer()" class="w-75 mx-auto mt-5">
   <div class="form-row">
     <div class="form-group col-6">
       <label>Name: </label>
       <input
         formControlName="name"
         type="text" class="form-control">
+      <p *ngIf="customerForm.controls.name.errors?.required && customerForm.controls.name.touched" class="text-danger">
+        Must not be empty!
+      </p>
     </div>
     <div class="form-group col-6">
       <label>Date Of Birth: </label>
       <input
         formControlName="dateOfBirth"
-        type="text" class="form-control">
+        type="date" class="form-control">
     </div>
   </div>
   <div class="form-row">
@@ -19,12 +23,18 @@
       <input
         formControlName="idCard"
         type="text" class="form-control">
+      <p *ngIf="customerForm.controls.name.errors?.required && customerForm.controls.name.touched" class="text-danger">
+        Must not be empty!
+      </p>
     </div>
     <div class="form-group col-6">
       <label>Phone: </label>
       <input
         formControlName="phone"
         type="text" class="form-control">
+      <p *ngIf="customerForm.controls.name.errors?.required && customerForm.controls.name.touched" class="text-danger">
+        Must not be empty!
+      </p>
     </div>
   </div>
   <div class="form-row">
@@ -33,12 +43,18 @@
       <input
         formControlName="email"
         type="text" class="form-control">
+      <p *ngIf="customerForm.controls.name.errors?.required && customerForm.controls.name.touched" class="text-danger">
+        Must not be empty!
+      </p>
     </div>
     <div class="form-group col-6">
       <label>Address: </label>
       <input
         formControlName="address"
         type="text" class="form-control">
+      <p *ngIf="customerForm.controls.name.errors?.required && customerForm.controls.name.touched" class="text-danger">
+        Must not be empty!
+      </p>
     </div>
   </div>
 
@@ -61,6 +77,6 @@
       <option value="Member">Member</option>
     </select>
   </div>
-  <input type="submit" value="Create" class="btn btn-success">
+  <input type="submit" value="Create" class="btn btn-success" [disabled]="!customerForm.valid">
   <a class="btn btn-outline-primary ml-2" href="/customer">Back</a>
 </form>

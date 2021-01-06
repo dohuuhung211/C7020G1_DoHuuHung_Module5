@@ -1,7 +1,7 @@
 <div class="row justify-content-between">
   <h2>Customers List</h2>
   <div class="d-flex">
-    <input class="form-control mr-2" type="text" placeholder="Input name" [(ngModel)]="term">
+    <input class="form-control mr-2" type="text" placeholder="Input name" (keyup)="search($event.target.value)">
     <button class="btn btn-info">Search</button>
   </div>
 </div>
@@ -26,7 +26,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor = "let customer of customers |filter:term">
+    <tr *ngFor = "let customer of customers| paginate: { itemsPerPage: 5, currentPage: p }">
       <td>{{customer.id}}</td>
       <td style="max-width: 18px">
         <a [routerLink]="['detail', customer.id]">{{customer.name}}</a>
@@ -39,10 +39,27 @@
       <td>{{customer.idCustomerType}}</td>
       <td style="width: 13%">
         <button class="btn btn-primary mr-1" [routerLink]="['edit', customer.id]">Edit</button>
-        <button class="btn btn-warning" [routerLink]="['delete', customer.id]">Delete</button>
+<!--        <button class="btn btn-warning" [routerLink]="['delete', customer.id]">Delete</button>-->
+        <button class="btn btn-warning" (click)="temp(customer.id)" data-toggle="modal" data-target="#modalDeleteCustomer">Delete</button>
       </td>
     </tr>
     </tbody>
   </table>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="modalDeleteCustomer" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body" id="modalDeleteCustomerContent">
+        Are you sure want to delete customer?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal"
+                (click)="onDel()">Confirm</button>
+      </div>
+    </div>
+  </div>
 </div>
 

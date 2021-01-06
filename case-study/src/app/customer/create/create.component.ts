@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, FormBuilder, Validators} from '@angular/forms';
 import {Route, Router} from '@angular/router';
 import {CustomerService} from '../../service/customer.service';
 import {CustomerTypeService} from '../../service/customer-type.service';
 import {ICustomerType} from '../../model/ICustomerType';
+import {ToastrService} from 'ngx-toastr';
+import {AlertService} from '../alert.service';
 
 @Component({
   selector: 'app-create',
@@ -13,28 +15,32 @@ import {ICustomerType} from '../../model/ICustomerType';
 export class CreateComponent implements OnInit {
   customerForm: FormGroup;
   customerTypeList: ICustomerType[];
-  constructor(private router: Router,
+  constructor(
+              private router: Router,
               private customerService: CustomerService,
-              private customerTypeService: CustomerTypeService) {
+              private customerTypeService: CustomerTypeService,
+              private alertService: AlertService,
+              private formBuilder: FormBuilder
+              ) {
     this.customerTypeService.findAll().toPromise().then(data => {
       this.customerTypeList = data;
     });
   }
   ngOnInit(): void {
-    this.customerForm = new FormGroup({
-      id: new FormControl(''),
-      name: new FormControl(''),
-      dateOfBirth: new FormControl(''),
-      idCard: new FormControl(''),
-      phone: new FormControl(''),
-      email: new FormControl(''),
-      address: new FormControl(''),
-      idCustomerType: new FormControl('')
+    this.customerForm = this.formBuilder.group({
+      id: [''],
+      name: ['', [Validators.required]],
+      dateOfBirth: ['', [Validators.required]],
+      idCard: ['', [Validators.required]],
+      phone: ['', [Validators.required]],
+      email: ['', [Validators.required]],
+      address: ['', [Validators.required]],
+      idCustomerType: ['']
     });
   }
   saveCustomer() {
     this.customerService.saveCustomer(this.customerForm.value).subscribe(data => {
-      this.router.navigateByUrl('customer').then(r => alert('Added successfully!'));
+      this.router.navigateByUrl('customer').then(r => this.alertService.showAlertSuccess('Added successfully!'));
     });
   }
   // saveCustomer(){
